@@ -1,0 +1,1 @@
+https://github.com/Tvorop/karty-podskazhut-main

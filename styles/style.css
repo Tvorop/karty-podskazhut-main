@@ -26,15 +26,16 @@ ol,
 li,
 figure {
   margin: 0;
-}
-
-button,
-a {
-  outline: none;
+  padding: 0;
 }
 
 button:hover {
   text-decoration: underline;
+}
+
+button:focus,
+a:focus {
+  outline: none;
 }
 
 button:focus-visible,
@@ -54,6 +55,7 @@ a:focus-visible {
 .header__menu {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-block: 20px;
   border-block-start: 1px solid var(--text-color);
   border-block-end: 1px solid var(--text-color);
@@ -66,13 +68,14 @@ a:focus-visible {
 .header__theme-toggler {
   display: flex;
   gap: 20px;
-  list-style-type: none;
+  list-style: none;
 }
 
 .header__theme-button {
   color: var(--text-color);
   font-family: var(--main-font), sans-serif;
   font-size: 18px;
+  padding: 0;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -89,22 +92,22 @@ a:focus-visible {
 .header__theme-button_is-active::after {
   position: absolute;
   content: '';
-  inline-size: 81px;
+  inline-size: calc(100% + 8px);
   block-size: 0.5ch;
   background-color: var(--accent-color);
-  inset-block-start: 13.5px;
-  inset-inline-end: 1px;
+  inset-block-end: 0.3ch;
+  inset-inline-end: -4px;
   z-index: -1;
 }
 
 .theme_dark .header__theme-button_is-active::after {
   position: absolute;
   content: '';
-  inline-size: 90px;
+  inline-size: calc(100% + 8px);
   block-size: 0.7ch;
   background-image: url(../images/pattern.svg);
-  inset-block-start: 13.5px;
-  inset-inline-end: -6px;
+  inset-block-end: 0.3ch;
+  inset-inline-end: -4px;
   z-index: -1;
 }
 
@@ -191,13 +194,12 @@ a:focus-visible {
 
 .content__card {
   display: flex;
-  inline-size: 100%;
-  aspect-ratio: 4/3;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-block-start: 7%;
   border: 1px solid var(--text-color);
+  aspect-ratio: 4/3;
 }
 
 .content__card-title {
@@ -215,6 +217,7 @@ a:focus-visible {
 
 .colored-text {
   position: relative;
+  display: inline-block;
   z-index: 0;
 }
 
@@ -222,9 +225,9 @@ a:focus-visible {
   position: absolute;
   content: '';
   background-color: var(--accent-color);
-  inline-size: 220px;
+  inline-size: calc(100% + 8px);
   block-size: 0.5ch;
-  inset-block-start: 35px;
+  inset-block-start: 43px;
   inset-inline-end: -5px;
   z-index: -1;
 }
@@ -233,9 +236,9 @@ a:focus-visible {
   position: absolute;
   content: '';
   background-image: url(../images/pattern.svg);
-  inline-size: 220px;
+  inline-size: calc(100% + 8px);
   block-size: 0.5ch;
-  inset-block-start: 35px;
+  inset-block-start: 43px;
   inset-inline-end: -5px;
   z-index: -1;
 }
